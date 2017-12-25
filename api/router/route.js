@@ -19,4 +19,17 @@ router.get("/:stock", (req, res, next) => {
    }) 
 });
 
+router.get("/full/:stock", (req, res, next) => {
+    googleFinance.historical({
+        symbol: "IIJ: " + req.params.stock
+    }, function(err, quotes) {
+        if (err) {
+            console.log(err);
+            res.json({"msg": err});
+        } else {
+            res.json(quotes);            
+        }
+    })
+});
+
 module.exports = router;
