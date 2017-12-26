@@ -62,6 +62,7 @@ def predict_tomorrow_price(saham_label, days = 8):
     
 def predict_tomorrow_price_preprocessed(saham_label, days = 8):
     maindf = get_data_saham(saham_label)
+    resultdf = maindf.copy()
     maindf = preprocessing(maindf)
     maindf = include_shift(maindf, days)
 
@@ -84,6 +85,7 @@ def predict_tomorrow_price_preprocessed(saham_label, days = 8):
         column = 'shifted_close_' + str(i)
         x_result.append(maindf[column][len(maindf[column])-1])
 
-    return regressor.predict(np.array(x_result).reshape(1, -1))
+    result = np.array(resultdf)
+    return regressor.predict(np.array(x_result).reshape(1, -1))*result[len(result)-1]+result[len(result)-1]
 
 

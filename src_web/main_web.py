@@ -1,4 +1,4 @@
-import saham
+import saham.saham
 from flask import request, Flask, render_template
 
 app = Flask(__name__)
