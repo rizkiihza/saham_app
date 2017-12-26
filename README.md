@@ -12,9 +12,11 @@ di program node.js berupa API yang memberikan data ke program python dalam forma
 1. Setup node.js
 
   Pertama-tama install dependency dengan masuk ke directory api lalu run
+  
     `npm install`
     
   selanjutnya jalankan api node.js dengan command
+  
     `node index.js`
    
    
@@ -24,7 +26,11 @@ di program node.js berupa API yang memberikan data ke program python dalam forma
   aplikasi web masih belum selesai sehingga aplikasi baru bisa dijalankan di terminal
   
   jalankan aplikasi dengan masuk ke direktori src_terminal lalu jalankan
+  
   `python3 main_terminal.py`
   
-  jika gagal karena ada dependency yang belum terinstall maka install dengan comman
-  `pip3 install x` dimana x adalah package yang diperlukan
+  jika gagal karena ada dependency yang belum terinstall maka install dengan command
+  
+  `pip3 install x` 
+  
+  dimana x adalah package yang diperlukan
